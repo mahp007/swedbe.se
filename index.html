@@ -22,20 +22,18 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            overflow: hidden;
+            overflow-x: hidden; /* Hindrar horisontell skrollning */
             opacity: 0;
-            animation: slideIn 1.2s forwards;
+            animation: fadeIn 0.8s forwards; /* Snabbare fade-in */
         }
 
         /* Animering för sidladdning */
-        @keyframes slideIn {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(100%);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
@@ -46,17 +44,17 @@
 
         /* Large Domain Name (outside the black box) */
         .domain-name {
-            font-size: 3.7em; 
+            font-size: 3.2em; 
             color: #b36d04;
             margin-bottom: 20px;
             letter-spacing: 2px;
             transition: transform 0.3s ease, color 0.3s ease;
             cursor: pointer;
             animation: colorChange 4s infinite alternate ease-in-out;
-            text-align: center; /* Centrerar texten */
-            word-wrap: break-word; /* Gör så att texten bryts på mindre skärmar */
-            overflow-wrap: break-word; /* Säkerställer att lång text bryts */
-            white-space: normal; /* Gör att texten bryts och inte visas på en rad */
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal; /* Gör så att lång text bryts på flera rader */
         }
 
         @keyframes colorChange {
@@ -156,13 +154,14 @@
             opacity: 1;
         }
 
-        /* Stats Section (outside the black box) */
+        /* Stats Section */
         .stats-section {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 0px;
             flex-wrap: wrap;
+            max-width: 100%; /* Säkerställer att knapparna inte går utanför skärmen */
         }
 
         .stat-item {
@@ -194,8 +193,8 @@
         /* Chat button */
         .chat-button {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            bottom: 20px;
+            right: 20px;
             background-color: #b36d04;
             color: white;
             border: none;
@@ -276,8 +275,8 @@
             }
 
             .chat-button {
-                bottom: 5px;
-                right: 5px;
+                bottom: 10px;
+                right: 10px;
                 width: 35px;
                 height: 35px;
                 font-size: 12px;
