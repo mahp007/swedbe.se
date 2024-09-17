@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive domain for sale - Act now">
+    <title>Domain for Sale</title>
+
+    <script>
+        var domainName = "yourdomain.com"; // Variabel för domännamnet
+    </script>
+
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #1C1C1C;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            animation: slideIn 1.2s forwards; /* Animering från botten */
+        }
+
+        /* Animering för sidladdning (från botten och upp) */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Orange färg - #b36d04 */
+        .orange {
+            color: #b36d04;
+        }
+
+        /* Large Domain Name (outside the black box) */
+        .domain-name {
+            font-size: 3.7em; 
+            color: #b36d04; /* Mörkare orange */
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+            animation: colorChange 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes colorChange {
+            0% { color: #b36d04; }
+            100% { color: #995a03; } /* Ännu mörkare vid animation */
+        }
+
+        .domain-name:hover {
+            transform: scale(1.05);
+        }
+
+        /* Centered black box */
+        .centered-content {
+            max-width: 900px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .announcement-text {
+            font-size: 1.8em;
+            color: #d3d3d3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .subtext {
+            font-size: 1.3em;
+            color: #d3d3d3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Make Your Move text */
+        .cta-text {
+            font-size: 1.8em;
+            color: #b36d04; /* Mörkare orange */
+            margin-bottom: 20px;
+            animation: moveAnimation 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        /* Call-to-action button */
+        .cta-button {
+            padding: 15px 50px;
+            background-color: #b36d04;
+            color: black;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background-color 0.3s, transform 0.3s ease-in-out, width 0.4s, opacity 0.3s;
+            position: relative;
+            overflow: hidden;
+            width: 320px; /* Tillräckligt bred för att rymma e-postadressen */
+        }
+
+        .cta-button span {
+            opacity: 1;
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #995a03; /* Mörkare orange vid hover */
+            transform: scale(1.05); /* Knappen blir större när man hovrar över den */
+        }
+
+        .cta-button:hover span {
+            opacity: 0; /* Döljer texten "Contact Us" omedelbart */
+        }
+
+        .cta-button::after {
+            content: 'ma.moh006@protonmail.com'; /* Visar e-postadressen */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 0.9em;
+            text-transform: lowercase;
+            opacity: 0;
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+        }
+
+        /* Stats Section (outside the black box) */
+        .stats-section {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 0px;
+        }
+
+        .stat-item {
+            background-color: #262626;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.1);
+        }
+
+        .stat-item h3 {
+            font-size: 1.6em;
+            color: #b36d04; /* Mörkare orange */
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 1em;
+            color: #d3d3d3;
+        }
+
+        /* Chat button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #b36d04; /* Mörkare orange */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 6px;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 4s infinite; /* Långsammare pulsande effekt */
+        }
+
+        /* Långsammare pulsande animation för chattknappen */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .chat-button:hover {
+            background-color: #995a03;
+        }
+
+        .chat-icon::before {
+            content: '💬';
+            font-size: 18px;
+        }
+
+        /* Chat message */
+        .chat-message {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background-color: #262626;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 1em;
+            max-width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Domain name outside the black box -->
+    <h1 class="domain-name" id="domainNameDisplay"></h1>
+
+    <!-- Centered content inside the black box -->
+    <div class="centered-content">
+        <p class="announcement-text">This premium domain is now available for sale.</p>
+        <p class="subtext">Take your business to the next level with this exclusive domain. Secure your brand’s future!</p>
+        <p class="cta-text">Make Your Move. Secure It Today!</p>
+        <button class="cta-button" onclick="contactUs()">
+            <span>Contact Us</span>
+        </button>
+    </div>
+
+    <!-- Stats Section (outside the black box) -->
+    <div class="stats-section">
+        <div class="stat-item">
+            <h3 class="orange">10M+</h3>
+            <p>Potential customers</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="orange">10+</h3>
+            <p>Years of industry experience</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="orange">Top</h3>
+            <p>SEO optimized domain</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="orange">Secure</h3>
+            <p>Trusted by professionals</p>
+        </div>
+    </div>
+
+    <!-- Chat button -->
+    <button class="chat-button" onclick="toggleChatMessage()">
+        <span class="chat-icon"></span>
+    </button>
+
+    <!-- Chat message -->
+    <div class="chat-message" id="chatMessage">
+        Looking to buy this domain? Email us at <strong>ma.moh006@protonmail.com</strong> for more information and next steps.
+    </div>
+
+    <script>
+        document.getElementById('domainNameDisplay').textContent = domainName;
+
+        function contactUs() {
+            const email = 'ma.moh006@protonmail.com';
+            window.location.href = `mailto:${email}`;
+        }
+
+        function toggleChatMessage() {
+            const chatMessage = document.getElementById('chatMessage');
+            if (chatMessage.style.display === 'block') {
+                chatMessage.style.display = 'none';
+            } else {
+                chatMessage.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('click', function(event) {
+            const chatMessage = document.getElementById('chatMessage');
+            const chatButton = document.querySelector('.chat-button');
+            if (!chatMessage.contains(event.target) && !chatButton.contains(event.target)) {
+                chatMessage.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
